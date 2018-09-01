@@ -39,6 +39,19 @@ class App extends Component {
 		})
 	}
 
+
+	componentDidMount() {
+		axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`)
+			.then((data) => {
+				console.log(data.data.articles);
+				const newsData = data.data.articles;
+
+				this.setState({
+					news: newsData
+				})
+			})
+	}
+
 	render() {
 		return (
 			<div className="App">

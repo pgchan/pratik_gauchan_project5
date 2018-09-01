@@ -8,10 +8,10 @@ const NewsGallery = (props) => {
                 {props.news.map((individual) => {
                     return (
                         <li>
-                            <img src={individual.image} alt=""/>
-                            <h3>Title: {individual.title}</h3>
+                            <img src={individual.urlToImage} alt="Image of ${individual.title}"/>
+                            <h3>{individual.title}</h3>
                             <p>Description: {individual.description}</p>
-                            <p>Link: <a href="">{individual.url}</a></p>
+                            <p><a target="_blank" href={individual.url} >Read more</a></p>
                         </li>
                     )
                     })

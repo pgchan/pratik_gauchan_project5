@@ -6,6 +6,7 @@ import Navigation from './Navigation'
 import Footer from './Footer';
 import NewsGallery from './NewsGallery';
 import Search from './Search';
+import FavouriteStories from './FavouriteStories';
 
 const apiKey = 'e8e38588d61245ffaf93b4b90e50523c'
 
@@ -14,7 +15,8 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			news: []
+			news: [],
+			favouriteStories: []
 		}
 
 		this.search = this.search.bind(this)
@@ -27,10 +29,18 @@ class App extends Component {
 				const newsData = response.data.articles;
 
 				this.setState({
-					news: newsData
+					news: newsData,
 				})
 			})
 	}
+
+
+	favNews = (passedTitle) => {
+		console.log('testing');
+		
+		// console.log(passedTitle);
+	}
+
 
 	selectedButton = (e) => {
 		console.log(e);		
@@ -52,7 +62,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.fetchNews(`general`)
+		this.fetchNews(`x`)
 	}
 
 	render() {
@@ -60,8 +70,15 @@ class App extends Component {
 			<div className="App">
 				<Header />
 				<Search search={this.search} />
-				<Navigation selectedButton = {this.selectedButton} />
-				<NewsGallery news={this.state.news} />
+				<Navigation 
+					selectedButton = {this.selectedButton}
+					
+					 />
+				<NewsGallery 
+					news={this.state.news}
+					favNews={this.favNews}
+					 />
+				<FavouriteStories />
 				<Footer />
 			</div>
 		);
@@ -71,6 +88,14 @@ class App extends Component {
 export default App;
 
 /*
+
+there is a button that grabs the entire a tag (via key) and pushes it to a new function in app.js called favorite stories.
+
+
+
+
+
+
 
 
 */

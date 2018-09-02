@@ -7,3 +7,17 @@ li {
     margin-bottom: 30px;
     list-style: none;
 }
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+.fa-star {
+    &:hover {
+        color: orange;
+    }
+}
+

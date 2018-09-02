@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
-    getSearchTerm(e) {
+    getSearchTerm = (e) => {
         e.preventDefault();
         this.props.search(this.refs.searched.value)
     }
@@ -15,5 +15,3 @@ class Search extends Component {
 }
 
 export default Search;
-
-// https://newsapi.org/v2/everything?q=canada&apiKey=e8e38588d61245ffaf93b4b90e50523c

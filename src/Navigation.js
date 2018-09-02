@@ -6,8 +6,7 @@ class Navigation extends Component {
     
         return (
             <div>
-
-                <button onClick={this.props.selectedButton} name="general">main headlines</button>
+                <button onClick={this.props.selectedButton} name="general">top stories</button>
                 <button onClick={this.props.selectedButton} name="sports">sports</button>
                 <button onClick={this.props.selectedButton} name="business">business</button>
                 <button onClick={this.props.selectedButton} name="entertainment">entertainment</button>

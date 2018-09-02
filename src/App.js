@@ -18,17 +18,15 @@ class App extends Component {
 	} 
 	
 	selectedButton = (e) => {
-		let clickedButton = e.target.name
-		console.log(` ${clickedButton} clicked`);
+		let category = e.target.name
+		console.log(` ${category} clicked`);
 
-		this.fetchNews(clickedButton)
+		this.fetchNews(category)
 	}
 
-	fetchNews(clickedButton) {
-		let buttonData = `${clickedButton}`
-		// console.log(buttonData);
+	fetchNews(category) {
 
-		axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=${buttonData}&apiKey=${apiKey}`)
+		axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=${category}&apiKey=${apiKey}`)
 		.then((data) => {
 			console.log(data.data.articles);
 			const newsData = data.data.articles;
@@ -39,17 +37,8 @@ class App extends Component {
 		})
 	}
 
-
 	componentDidMount() {
-		axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`)
-			.then((data) => {
-				console.log(data.data.articles);
-				const newsData = data.data.articles;
-
-				this.setState({
-					news: newsData
-				})
-			})
+		this.fetchNews(`general`)
 	}
 
 	render() {
@@ -65,3 +54,8 @@ class App extends Component {
 }
 
 export default App;
+
+/*
+
+
+*/

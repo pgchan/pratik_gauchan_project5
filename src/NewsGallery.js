@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class NewsGallery extends Component {
 
@@ -10,19 +10,16 @@ class NewsGallery extends Component {
                         if (individual.urlToImage != null) {
                             return (
                                 <li key={individual.publishedAt}>
-                                        <img src={individual.urlToImage} alt='Related to the article'/>
-                                        <a target="_blank" href={individual.url}>
-                                            <h3>{individual.title}</h3>
-                                            <p>{individual.source.name}</p>
-                                            <p>{individual.description}</p>
-                                        </a> 
-                                        {/* <form >
-                                            <button onSubmit={this.props.favoritesButton}><i className="far fa-star"></i></button>
-                                        </form> */}
+                                    <img src={individual.urlToImage} alt='Related to the article'/>
+                                    <a target="_blank" href={individual.url}>
+                                        <h3>{individual.title}</h3>
+                                        <p>{individual.source.name}</p>
+                                        <p>{individual.description}</p>
+                                    </a> 
 
-                                        <button onClick={this.props.favNews}>Save to favourites</button>
+                                    <button onClick={() => this.props.favNews(individual)}><i className="far fa-star"></i></button>
                                         
-                                    </li>
+                                </li>
                             )
                         }  
                         return '';

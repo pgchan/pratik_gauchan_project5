@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class Navigation extends Component {
 
@@ -13,7 +13,6 @@ class Navigation extends Component {
                 <button onClick={this.props.selectedButton} name="health">health</button>
                 <button onClick={this.props.selectedButton} name="science">science</button>
                 <button onClick={this.props.selectedButton} name="technology">technology</button>
-
 
                 <button name="favStories">Favourite Stories</button>
 

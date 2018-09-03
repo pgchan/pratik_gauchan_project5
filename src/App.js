@@ -35,11 +35,26 @@ class App extends Component {
 	}
 
 
-	favNews = (passedTitle) => {
-		console.log('testing');
+	favNews = (passedNewsObject) => {
+		console.log('fresh grabbed:');
+		console.log(passedNewsObject);
+
+		const favouriteNewsArticles = this.state.favouriteStories;
 		
-		// console.log(passedTitle);
+		favouriteNewsArticles.push(passedNewsObject);
+		console.log('array of objects:');
+		console.log(favouriteNewsArticles);
+		
+		this.setState({
+			favouriteStories: favouriteNewsArticles
+		})
+		
+		console.log('Favourites State:');
+		console.log(this.state.favouriteStories);
+		// console.log(this.state.news);
+	
 	}
+
 
 
 	selectedButton = (e) => {

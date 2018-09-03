@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './styles/styles.css';
 import axios from 'axios';
-import Header from './Header';
-import Navigation from './Navigation'
-import Footer from './Footer';
-import NewsGallery from './NewsGallery';
-import Search from './Search';
-import FavouriteStories from './FavouriteStories';
+import Header from './components/Header';
+import Navigation from './components/Navigation'
+import Footer from './components/Footer';
+import NewsGallery from './components/NewsGallery';
+import Search from './components/Search';
+import FavouriteStories from './components/FavouriteStories';
 
 const apiKey = 'e8e38588d61245ffaf93b4b90e50523c'
 
@@ -112,17 +112,19 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Header />
-				<Search search={this.search} />
-				<Navigation 
-					selectedButton = {this.selectedButton}
-					
-					 />
-				<NewsGallery 
-					news={this.state.news}
-					favNews={this.favNews}
-					 />
-				<FavouriteStories />
+				<div className="headerSearch">
+					<Header />
+					<Search search={this.search} />
+				</div>
+
+				<div className="navNewsFavs">
+					<Navigation selectedButton = {this.selectedButton} />
+					<NewsGallery 
+						news={this.state.news}
+						favNews={this.favNews}
+						/>
+					<FavouriteStories />
+				</div>
 				<Footer />
 			</div>
 		);

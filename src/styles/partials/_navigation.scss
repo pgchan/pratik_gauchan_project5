@@ -1,0 +1,24 @@
+
+.navNewsFavs {
+        padding-top: 150px;
+}
+
+.navigation {
+    position: fixed;
+    // z-index: 10;
+    height: 100%;
+    background: #fff;
+    top: 120px;
+    &__buttons{
+        color: #7e868c;
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 10px 50px 10px 30px;
+        background: white;
+        border: none;
+        &:hover{color: #1a73e8}
+        & i {width: 35px;}
+    }
+}
+

@@ -5,7 +5,7 @@ class Navigation extends Component {
     render() {
     
         return (
-            <div>
+            <div class="navigation">
                 <button onClick={this.props.selectedButton} name="general">top stories</button>
                 <button onClick={this.props.selectedButton} name="sports">sports</button>
                 <button onClick={this.props.selectedButton} name="business">business</button>

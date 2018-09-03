@@ -39,21 +39,50 @@ class App extends Component {
 		console.log('fresh grabbed:');
 		console.log(passedNewsObject);
 
-		const favouriteNewsArticles = this.state.favouriteStories;
 		
-		favouriteNewsArticles.push(passedNewsObject);
-		console.log('array of objects:');
+		let favouriteNewsArticles = [];
+
+		if (favouriteNewsArticles.includes(passedNewsObject)) {
+			favouriteNewsArticles = favouriteNewsArticles.filter( newsArticle => newsArticle !== favouriteNewsArticles)
+		} else {
+			favouriteNewsArticles.push(passedNewsObject)
+		}
+		
+		
 		console.log(favouriteNewsArticles);
 		
-		this.setState({
-			favouriteStories: favouriteNewsArticles
-		})
 		
-		console.log('Favourites State:');
-		console.log(this.state.favouriteStories);
-		// console.log(this.state.news);
+		// this.state.favouriteStories;
+		
+		// favouriteNewsArticles.push(passedNewsObject);
+		// console.log('array of objects:');
+		// console.log(favouriteNewsArticles);
+		
+		// this.setState({
+		// 	favouriteStories: favouriteNewsArticles
+		// })
+		
+		// console.log('Favourites State:');
+		// console.log(this.state.favouriteStories);
+		// // console.log(this.state.news);
 	
 	}
+
+
+
+	// order.vegetables = [];
+	// $(".pizza-vegetables input[type='checkbox']").click(function() {
+	// 	const vegetablesValue = $(this).val();
+	// 	if (order.vegetables.includes(vegetablesValue)) {
+	// 		order.vegetables = order.vegetables.filter(vegetable => vegetable != vegetablesValue);
+	// 	} else {
+	// 		order.vegetables.push(vegetablesValue);
+	// 	}
+	// 	addPrice();
+	// 	addItems();
+	// });
+
+
 
 
 
@@ -66,9 +95,9 @@ class App extends Component {
 
 	fetchNews = (category) => {
 		axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=${category}&apiKey=${apiKey}`)
-		.then((data) => {
-			console.log(data.data.articles);
-			const newsData = data.data.articles;
+		.then((response) => {
+			console.log(response.data.articles);
+			const newsData = response.data.articles;
 
 			this.setState( {
 				news: newsData
@@ -101,16 +130,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
-
-there is a button that grabs the entire a tag (via key) and pushes it to a new function in app.js called favorite stories.
-
-
-
-
-
-
-
-
-*/

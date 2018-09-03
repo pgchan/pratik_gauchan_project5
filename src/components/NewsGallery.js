@@ -18,7 +18,7 @@ class NewsGallery extends Component {
                                                 <p className="news__text__description">{individual.description}</p>
                                             </div>
 
-                                            <img src={individual.urlToImage} alt='Related to the article'/>
+                                            <img src={individual.urlToImage} alt='Picture related to the article' className="news__image"/>
 
                                         </div>
                                     </a> 

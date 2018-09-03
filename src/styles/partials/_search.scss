@@ -1,10 +1,9 @@
 .search {
-    // box-shadow: 0 10px 6px -6px #ababab;
     width: 100%;
     background: #fff;
-    padding-bottom: 10px;
     position: relative;
     border: 1px solid transparent;
+    flex: 1 1 100%;
     &__container{
         position: relative;
         & input:focus{

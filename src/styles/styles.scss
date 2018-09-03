@@ -26,7 +26,12 @@ body {
     max-width: 800px;
 }
 
-img {
+button {background: #fff}
+button:focus, input[type="button"]:focus {
+    outline: none;
+}
+
+.news__image {
     width: 200px;
     max-height: 125px;
     border-radius: 7px;
@@ -37,6 +42,7 @@ input:focus {
 }
 
 li {
+    // z-index: -1;
     border: 1px solid lightgrey;
     border-radius: 7px;
     margin-bottom: 20px;
@@ -66,17 +72,18 @@ li {
     &__text{
         flex-direction: column;
         display: flex;
-        padding: 0 1%;
+        padding-right: 3%;
         flex: 1;
         &__header{
             margin-bottom: 10px;
             color: #000;
             border-bottom: 1px solid transparent;}
-        &__source{margin-bottom: 10px}
-        &__p{font-size: .8rem;}
+        &__source{
+            margin-bottom: 10px;
+            font-size: 0.7rem;}
+        &__description{font-size: .9rem;}
     }
 }
-
 
 .fa-star {
     &:hover {

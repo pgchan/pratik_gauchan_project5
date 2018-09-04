@@ -1,74 +1,54 @@
-@media only screen and (max-width: 1260px) {
-    .navNewsFavs {
-        display: flex;
-    }
+// Media Queries
 
+@media only screen and (max-width: 1260px) {
+    .navNewsFavs {display: flex;}
     .navNewsFavs .navigation {
         position: sticky;
         flex-basis: 230px;}
 }
 
 @media only screen and (max-width: 1070px) {
-    // .navNewsFavs {display: inherit}
-    //  .navigation__list{
-    //     display: inline;
-    //     width: 300px;
-    // }
-
     .navigation {
-        // &__buttons {width: 300px;}
+        &__toggle {display: inline-block}
+        &__hamburger__icon {display: inline-block}  
         &__hamburger__button {
             left: 16px;
             position: absolute;
             top: -35px;}
         &__list {
-        position: absolute;
-        width: 300px;
-        left: -300px;}
-    
+            height: 100vh;
+            box-shadow: 0 0 16px rgba(0,0,0,.28);
+            width: 300px;
+            left: -316px;
+            position: absolute}
     }
 
-    .navigation__hamburger_button:checked ~ .navigation__list {left: 0px};
-
-    .navNewsFavs .navigation {flex-basis:0 }
-
+    .navigation__toggle:checked ~ .navigation__list {left: -16px;}
+    
+    .navNewsFavs .navigation {flex-basis: 0}
 }
 
 @media only screen and (max-width: 830px) {
-    .news-individual{
-        padding: 0 15px;
-    }
+    .news__individual{padding: 0 15px;}
 }
 
 @media only screen and (max-width: 650px) {
-
     .news {
         & .news__image {    
             width: 150px;
-            max-height: 100px;
-        }
+            max-height: 100px;}
         &__text {
             &__header {font-size: 1rem;}
-            &__description{display: none}
-        }   
+            &__description{display: none}}   
     }
-
-    .news-individual li {padding: 23px;}
-
+    .news__individual li {padding: 23px;}
     .search__container .search__bar {
         width: 90%;
         padding-left: 5%;
     }
-
     .search__icon {display: none;}
 }
 
 @media only screen and (max-width: 550px) {
     .news__text__source{display: none}
-
-}
-
-@media only screen and (max-width: 420px) {
-    
-
 }

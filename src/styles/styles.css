@@ -139,21 +139,27 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     flex-basis: 230px; } }
 
 @media only screen and (max-width: 1070px) {
+  .navigation__toggle {
+    display: inline-block; }
+  .navigation__hamburger__icon {
+    display: inline-block; }
   .navigation__hamburger__button {
     left: 16px;
     position: absolute;
     top: -35px; }
   .navigation__list {
-    position: absolute;
+    height: 100vh;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.28);
     width: 300px;
-    left: -300px; }
-  .navigation__hamburger_button:checked ~ .navigation__list {
-    left: 0px; }
+    left: -316px;
+    position: absolute; }
+  .navigation__toggle:checked ~ .navigation__list {
+    left: -16px; }
   .navNewsFavs .navigation {
     flex-basis: 0; } }
 
 @media only screen and (max-width: 830px) {
-  .news-individual {
+  .news__individual {
     padding: 0 15px; } }
 
 @media only screen and (max-width: 650px) {
@@ -164,7 +170,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     font-size: 1rem; }
   .news__text__description {
     display: none; }
-  .news-individual li {
+  .news__individual li {
     padding: 23px; }
   .search__container .search__bar {
     width: 90%;
@@ -175,6 +181,12 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 @media only screen and (max-width: 550px) {
   .news__text__source {
     display: none; } }
+
+body {
+  font-family: 'Roboto', sans-serif; }
+
+button:first-letter {
+  text-transform: capitalize; }
 
 .headerSearch {
   padding: 10px 0;
@@ -225,13 +237,17 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 .navigation {
   position: fixed;
+  z-index: 10;
   height: 100%;
   background: #fff;
   top: 120px; }
+  .navigation__toggle {
+    display: none; }
   .navigation__list {
-    border: 1px solid black; }
-  .navigation__hamburger__button {
-    display: inline-block; }
+    height: 100vh;
+    background: #fff; }
+  .navigation__hamburger__icon {
+    display: none; }
   .navigation__buttons {
     color: #7e868c;
     display: block;
@@ -239,8 +255,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     text-align: left;
     padding: 10px 50px 10px 30px;
     background: white;
-    border: none;
-    border-radius: 0 50px 50px 0; }
+    border: none; }
     .navigation__buttons:hover {
       color: #1a73e8; }
     .navigation__buttons:focus {
@@ -264,7 +279,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   padding: 0; }
 
 body {
-  font-family: 'Roboto', sans-serif;
   background: #fff;
   color: grey; }
 
@@ -332,3 +346,6 @@ li {
 
 .fa-star:hover {
   color: orange; }
+
+.navigation__toggle:checked {
+  background: black; }

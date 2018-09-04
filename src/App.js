@@ -39,52 +39,61 @@ class App extends Component {
 		console.log('fresh grabbed:');
 		console.log(passedNewsObject);
 
-		
-		let favouriteNewsArticles = [];
+		// this.setState.favouriteStories.push
 
-		if (favouriteNewsArticles.includes(passedNewsObject)) {
-			favouriteNewsArticles = favouriteNewsArticles.filter( newsArticle => newsArticle !== favouriteNewsArticles)
-		} else {
-			favouriteNewsArticles.push(passedNewsObject)
-		}
-		
-		
-		console.log(favouriteNewsArticles);
-		
-		
-		// this.state.favouriteStories;
-		
-		// favouriteNewsArticles.push(passedNewsObject);
-		// console.log('array of objects:');
-		// console.log(favouriteNewsArticles);
-		
 		// this.setState({
-		// 	favouriteStories: favouriteNewsArticles
+		// 	favouriteStories: passedNewsObject
 		// })
-		
+
 		// console.log('Favourites State:');
 		// console.log(this.state.favouriteStories);
 		// // console.log(this.state.news);
+
+
+		let copiedState = this.state.favouriteStories;
+		copiedState.push(passedNewsObject);
+
+		this.setState({
+			favouriteStories: copiedState
+		})
+		
+		console.log('replaced state');
+		console.log(this.state.favouriteStories);
+		
+
+
+
+		// if (favouriteNewsArticles.includes(passedNewsObject)) {
+		// 	favouriteNewsArticles = favouriteNewsArticles.filter( newsArticle => newsArticle !== favouriteNewsArticles)
+		// } else {
+		// 	favouriteNewsArticles.push(passedNewsObject)
+		// }
+
+		// favouriteNewsArticles.push(passedNewsObject)
+		
+		// console.log('fav news articles');
+		// console.log(favouriteNewsArticles);
+
+		// 	this.setState = ({
+		// 		favouriteStories: favouriteNewsArticles
+		// 	})
+		
+		// console.log('fav stories');
+		// console.log(this.state.favouriteStories);
+		
+		
+		
+		
+		// favouriteGrabbedArticles.push(passedNewsObject);
+		// console.log('array of objects:');
+		// console.log(favouriteGrabbedArticles);
+		
+		// this.setState({
+		// 	favouriteStories: favouriteGrabbedArticles
+		// })
+		
 	
 	}
-
-
-
-	// order.vegetables = [];
-	// $(".pizza-vegetables input[type='checkbox']").click(function() {
-	// 	const vegetablesValue = $(this).val();
-	// 	if (order.vegetables.includes(vegetablesValue)) {
-	// 		order.vegetables = order.vegetables.filter(vegetable => vegetable != vegetablesValue);
-	// 	} else {
-	// 		order.vegetables.push(vegetablesValue);
-	// 	}
-	// 	addPrice();
-	// 	addItems();
-	// });
-
-
-
-
 
 	selectedButton = (e) => {
 		console.log(e);		
@@ -123,7 +132,7 @@ class App extends Component {
 						news={this.state.news}
 						favNews={this.favNews}
 						/>
-					<FavouriteStories />
+					{/* <FavouriteStories /> */}
 				</div>
 				<Footer />
 			</div>

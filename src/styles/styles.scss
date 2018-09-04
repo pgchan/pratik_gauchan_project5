@@ -6,15 +6,12 @@
 @import "partials/_navigation.scss";
 @import "partials/_footer.scss";
 
-
-
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
     background: #fff;
     color: grey;
 }
@@ -42,7 +39,6 @@ input:focus {
 }
 
 li {
-    // z-index: -1;
     border: 1px solid lightgrey;
     border-radius: 7px;
     margin-bottom: 20px;
@@ -89,4 +85,10 @@ li {
     &:hover {
         color: orange;
     }
+}
+
+
+
+.navigation__toggle:checked {
+    background: black
 }

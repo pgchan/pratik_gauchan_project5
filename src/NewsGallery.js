@@ -4,30 +4,28 @@ class NewsGallery extends Component {
 
     render() {
         return (
-            <section className="news__individual wrapper">
+            <div className="news-individual">
                 <ul>
                     {this.props.news.map((individual) => {                                 
                         if (individual.urlToImage != null) {
                             return (
                                 <li key={individual.publishedAt}>
+                                    <img src={individual.urlToImage} alt='Related to the article'/>
                                     <a target="_blank" href={individual.url}>
-                                        <div className="news">
-                                            <div className="news__text">
-                                                <h3 className="news__text__header">{individual.title}</h3>
-                                                <p className="news__text__source">{individual.source.name}</p>
-                                                <p className="news__text__description">{individual.description}</p>
-                                            </div>
-                                            <img src={individual.urlToImage} alt='Picture related to the article' className="news__image"/>
-                                        </div>
+                                        <h3>{individual.title}</h3>
+                                        <p>{individual.source.name}</p>
+                                        <p>{individual.description}</p>
                                     </a> 
-                                    <button onClick={() => this.props.favNews(individual)}><i className="far fa-star"></i></button>       
+
+                                    <button onClick={() => this.props.favNews(individual)}><i className="far fa-star"></i></button>
+                                        
                                 </li>
                             )
                         }  
                         return '';
                     })}
                 </ul>
-            </section>
+            </div>
         )
     }
 }

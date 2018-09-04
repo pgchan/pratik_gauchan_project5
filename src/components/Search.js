@@ -9,7 +9,7 @@ class Search extends Component {
         return (
             <form onSubmit={this.getSearchTerm.bind(this)} className="search">
                 <div className="search__container">
-                    <input ref="searched" type="text" placeholder="search for the latest news" className="search__bar"/>
+                    <input ref="searched" type="text" placeholder="Search for the latest news" className="search__bar"/>
                     <i className="fas fa-search search__icon"></i>
                 </div>
             </form>

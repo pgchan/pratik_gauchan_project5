@@ -8,24 +8,23 @@
 }
 
 @media only screen and (max-width: 1070px) {
-    .navigation {
-        &__toggle {display: inline-block}
-        &__hamburger__icon {display: inline-block}  
+    .navigation { 
         &__hamburger__button {
             left: 16px;
             position: absolute;
-            top: -35px;}
+            top: -35px;}   
         &__list {
-            height: 100vh;
             box-shadow: 0 0 16px rgba(0,0,0,.28);
-            width: 300px;
+            width: 230px;
             left: -316px;
             position: absolute}
-    }
-
-    .navigation__toggle:checked ~ .navigation__list {left: -16px;}
-    
-    .navNewsFavs .navigation {flex-basis: 0}
+        }
+        .navigation__toggle:checked ~ .navigation__list {
+            left: -16px;
+            top: 36px;
+            padding: 20px 0px}
+        .navNewsFavs .navigation {flex-basis: 0}
+        .navigation__label .navigation__hamburger__icon {display: inline-block}
 }
 
 @media only screen and (max-width: 830px) {
@@ -33,6 +32,7 @@
 }
 
 @media only screen and (max-width: 650px) {
+    .header__header{display: none;}
     .news {
         & .news__image {    
             width: 150px;
@@ -43,8 +43,8 @@
     }
     .news__individual li {padding: 23px;}
     .search__container .search__bar {
-        width: 90%;
-        padding-left: 5%;
+        width: 95%;
+        padding-left: 25px;
     }
     .search__icon {display: none;}
 }

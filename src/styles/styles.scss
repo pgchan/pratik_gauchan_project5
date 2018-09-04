@@ -23,7 +23,7 @@ body {
     max-width: 800px;
 }
 
-button {background: #fff}
+button {background: transparent;}
 button:focus, input[type="button"]:focus {
     outline: none;
 }
@@ -50,15 +50,13 @@ li {
         position: absolute;
         right: 1.5%;
         top: 5.5%;
-        font-size: 1rem;
     }
-    & button:selected {color: orange}
+    & button:focus {color: orange}
     & a {
         text-decoration: none;
         color: grey;
         border-bottom: 1px solid transparent;
     }
-    & a:hover h3 {border-bottom: 1px solid black}
     & a:visited {color: grey}
 }
 
@@ -75,20 +73,10 @@ li {
             color: #000;
             border-bottom: 1px solid transparent;}
         &__source{
-            margin-bottom: 10px;
-            font-size: 0.7rem;}
-        &__description{font-size: .9rem;}
+            margin-bottom: 10px;}
     }
 }
 
-.fa-star {
-    &:hover {
-        color: orange;
-    }
-}
-
-
-
-.navigation__toggle:checked {
-    background: black
+.fa-star:hover {
+    color: orange;
 }

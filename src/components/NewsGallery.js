@@ -10,7 +10,7 @@ class NewsGallery extends Component {
                         if (individual.urlToImage != null) {
                             return (
                                 <li key={individual.publishedAt}>
-                                    <a target="_blank" href={individual.url}>
+                                    <a target="_blank" href={individual.url} rel="noopener noreferrer">
                                         <div className="news">
                                             <div className="news__text">
                                                 <h3 className="news__text__header">{individual.title}</h3>
@@ -36,20 +36,9 @@ export default NewsGallery;
 
 /*
 
-if this.favoritesbutton is clicked, do not use a tag, but send it to favorites array.
+when button is clicked, send data from favouriteStories into news
 
 
 
-
-
-
-let favouriteNewsArticles = [];
-
-
-if (favouriteNewsArticles.includes(passedNewsObject)) {
-    favouriteNewsArticles = favouriteNewsArticles.filter(fav => fav != passedNewsObject)
-} else {
-    favouriteNewsArticles.push(passedNewsObject);
-}
 
 */

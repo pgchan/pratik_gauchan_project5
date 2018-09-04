@@ -11,24 +11,23 @@
     top: 120px;
     &__toggle {display: none;}
     &__list {
-        height: 100vh;
         background: #fff;}
-    &__hamburger__icon {display: none}    
-    // &__hamburger__button {display: inline-block;}
+    &__hamburger__icon {
+        display: none;
+        font-size: 1.4rem;
+        cursor: pointer;}    
     &__buttons{
         color: #7e868c;
         display: block;
         width: 100%;
         text-align: left;
-        padding: 10px 50px 10px 30px;
+        padding: 10px 50px 10px 15px;
         background: white;
         border: none;
-        // border-radius: 0 50px 50px 0;
         &:hover{color: #1a73e8}
         &:focus {
             background:#e1edff;
-            color: #0071f0;
-        } 
+            color: #0071f0;} 
         & i {width: 35px;}
     }
 }

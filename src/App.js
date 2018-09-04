@@ -6,7 +6,6 @@ import Navigation from './components/Navigation'
 import Footer from './components/Footer';
 import NewsGallery from './components/NewsGallery';
 import Search from './components/Search';
-import FavouriteStories from './components/FavouriteStories';
 
 const apiKey = 'e8e38588d61245ffaf93b4b90e50523c'
 
@@ -18,14 +17,12 @@ class App extends Component {
 			news: [],
 			favouriteStories: []
 		}
-
 		this.search = this.search.bind(this)
-	} 
+	}
 
 	search(searchedTerm) {		
 		axios.get(`https://newsapi.org/v2/everything?q=${searchedTerm}&apiKey=${apiKey}`)
 			.then((response) => {
-				console.log(response.data.articles);
 				const newsData = response.data.articles;
 
 				this.setState({
@@ -34,78 +31,30 @@ class App extends Component {
 			})
 	}
 
-
 	favNews = (passedNewsObject) => {
-		console.log('fresh grabbed:');
-		console.log(passedNewsObject);
-
-		// this.setState.favouriteStories.push
-
-		// this.setState({
-		// 	favouriteStories: passedNewsObject
-		// })
-
-		// console.log('Favourites State:');
-		// console.log(this.state.favouriteStories);
-		// // console.log(this.state.news);
-
 
 		let copiedState = this.state.favouriteStories;
-		copiedState.push(passedNewsObject);
+
+		if (copiedState.includes(passedNewsObject)) {
+			copiedState = copiedState.filter( newsArticle => newsArticle !== copiedState)
+		} else {
+			copiedState.push(passedNewsObject)
+		}
 
 		this.setState({
 			favouriteStories: copiedState
-		})
-		
-		console.log('replaced state');
-		console.log(this.state.favouriteStories);
-		
-
-
-
-		// if (favouriteNewsArticles.includes(passedNewsObject)) {
-		// 	favouriteNewsArticles = favouriteNewsArticles.filter( newsArticle => newsArticle !== favouriteNewsArticles)
-		// } else {
-		// 	favouriteNewsArticles.push(passedNewsObject)
-		// }
-
-		// favouriteNewsArticles.push(passedNewsObject)
-		
-		// console.log('fav news articles');
-		// console.log(favouriteNewsArticles);
-
-		// 	this.setState = ({
-		// 		favouriteStories: favouriteNewsArticles
-		// 	})
-		
-		// console.log('fav stories');
-		// console.log(this.state.favouriteStories);
-		
-		
-		
-		
-		// favouriteGrabbedArticles.push(passedNewsObject);
-		// console.log('array of objects:');
-		// console.log(favouriteGrabbedArticles);
-		
-		// this.setState({
-		// 	favouriteStories: favouriteGrabbedArticles
-		// })
-		
-	
+		})		
 	}
 
 	selectedButton = (e) => {
-		console.log(e);		
 		let category = e.target.name
-		console.log(` ${category} clicked`);
 		this.fetchNews(category)
 	}
 
 	fetchNews = (category) => {
 		axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=${category}&apiKey=${apiKey}`)
 		.then((response) => {
-			console.log(response.data.articles);
+
 			const newsData = response.data.articles;
 
 			this.setState( {
@@ -114,8 +63,14 @@ class App extends Component {
 		})
 	}
 
+	showFavourite = (e) => {
+		this.setState({
+			news: this.state.favouriteStories
+		})
+	}
+
 	componentDidMount() {
-		this.fetchNews(`x`)
+		this.fetchNews(`general`)
 	}
 
 	render() {
@@ -127,12 +82,14 @@ class App extends Component {
 				</div>
 
 				<div className="navNewsFavs">
-					<Navigation selectedButton = {this.selectedButton} />
+					<Navigation 
+						selectedButton = {this.selectedButton} 
+						showFavourite = {this.showFavourite}
+					/>
 					<NewsGallery 
 						news={this.state.news}
 						favNews={this.favNews}
-						/>
-					{/* <FavouriteStories /> */}
+					/>
 				</div>
 				<Footer />
 			</div>

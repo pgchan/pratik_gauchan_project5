@@ -12,9 +12,11 @@
     flex: 1 0 auto;
     display: flex;
     align-items: center;
-    position: absolute;
-    top: 20px;
+    // position: absolute;
+    top: 25px;
+    padding-left: 15px;
     z-index: 40;
     &__hamburgerMenu{padding-left: 30px}
     &__header  {padding-left: 22px;}
+    &__logo {height: 25px;}
 }

@@ -15,7 +15,8 @@ class App extends Component {
 		super();
 		this.state = {
 			news: [],
-			favouriteStories: []
+			favouriteStories: [],
+			favouritesPage: false
 		}
 		this.search = this.search.bind(this)
 	}
@@ -35,20 +36,32 @@ class App extends Component {
 
 		let copiedState = this.state.favouriteStories;
 
+		// let copiedState = Array.from(this.state.favouriteStories);
+
 		if (copiedState.includes(passedNewsObject)) {
-			copiedState = copiedState.filter( newsArticle => newsArticle !== copiedState)
+			// copiedState = copiedState.filter( newsArticle => newsArticle !== copiedState)
+
+			copiedState = copiedState.filter(newsArticle => newsArticle !== passedNewsObject)
+
+			// copiedState = copiedState.pop(passedNewsObject)
 		} else {
 			copiedState.push(passedNewsObject)
 		}
 
+		if (this.state.favouritesPage == true) {
+			this.setState({news: copiedState})
+		}
+
 		this.setState({
 			favouriteStories: copiedState
+			// news:copiedState
 		})		
 	}
 
 	selectedButton = (e) => {
 		let category = e.target.name
 		this.fetchNews(category)
+		this.setState({favouritesPage: false})
 	}
 
 	fetchNews = (category) => {
@@ -65,6 +78,7 @@ class App extends Component {
 
 	showFavourite = (e) => {
 		this.setState({
+			favouritesPage: true,
 			news: this.state.favouriteStories
 		})
 	}
@@ -72,6 +86,10 @@ class App extends Component {
 	componentDidMount() {
 		this.fetchNews(`general`)
 	}
+
+	// componentDidUpdate() {
+	// 	window.scrollTo(0, 0)
+	// }
 
 	render() {
 		return (
@@ -98,3 +116,18 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+/*
+if button is clicked again, remove it.
+
+
+------
+
+if button is clicked, add.
+
+
+if another button is clicked, remove
+
+*/

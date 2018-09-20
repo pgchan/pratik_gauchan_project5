@@ -23,15 +23,27 @@ body {
     max-width: 800px;
 }
 
-button {background: transparent;}
-button:focus, input[type="button"]:focus {
-    outline: none;
-}
+// button {background: transparent;}
+// button:focus, input[type="button"]:focus {
+//     outline: none;
+// }
 
-.news__image {
-    width: 200px;
-    max-height: 125px;
-    border-radius: 7px;
+// input[type=checkbox] {
+//     top: 10px;
+//     right: 10px;
+// }
+
+.news{
+    &__image {
+        max-width: 125px;
+        max-height: 125px;
+        border-radius: 7px;
+        object-fit: cover;}
+    &__favourites {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
 }
 
 input:focus {
@@ -75,8 +87,10 @@ li {
         &__source{
             margin-bottom: 10px;}
     }
-}
-
-.fa-star:hover {
-    color: orange;
+    &__individual li:hover {
+        background: #fafafa;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 0, 0, 0.1);
+        transition: 0.4s;
+    }
+    &:hover h3 {text-decoration: underline}
 }

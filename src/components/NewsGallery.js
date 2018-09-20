@@ -20,7 +20,9 @@ class NewsGallery extends Component {
                                             <img src={individual.urlToImage} alt='Picture related to the article' className="news__image"/>
                                         </div>
                                     </a> 
-                                    <button onClick={() => this.props.favNews(individual)}><i className="far fa-star"></i></button>       
+                                    {/* <button onClick={() => this.props.favNews(individual)}></button>    */}
+                                    {/* <i className="far fa-star"></i>     */}
+                                    <input class="news__favourites" type="checkbox" onClick={() => this.props.favNews(individual)}/>
                                 </li>
                             )
                         }  

@@ -48,7 +48,7 @@ class App extends Component {
 			copiedState.push(passedNewsObject)
 		}
 
-		if (this.state.favouritesPage == true) {
+		if (this.state.favouritesPage === true) {
 			this.setState({news: copiedState})
 		}
 
@@ -116,18 +116,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-/*
-if button is clicked again, remove it.
-
-
-------
-
-if button is clicked, add.
-
-
-if another button is clicked, remove
-
-*/

@@ -5,7 +5,12 @@ class Header extends Component {
         return (
             <header className="header">
                 {/* <h1 className="header__header">News</h1> */}
-                <img className="header__logo" src="../../googlenews.png" alt=""/>
+                <a href="index.html">
+                    <img className="header__logo" src="../../googlenews.png" alt="Main logo (google news) that hides in mobile view." />
+                </a>
+                <a href="index.html">
+                    <img className="header__logo__icon" src="../../googlenewsIcon.png" alt="Google News logo that is displayed in mobile view." />
+                </a>
             </header>
         );
     }

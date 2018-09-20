@@ -16,13 +16,21 @@ class NewsGallery extends Component {
                                                 <h3 className="news__text__header">{individual.title}</h3>
                                                 <p className="news__text__source">{individual.source.name}</p>
                                                 <p className="news__text__description">{individual.description}</p>
+                                            
+                                                <div className="news__favourites__container">
+                                                    Add to favourites: <input id="news__favs" className="news__favourites" type="checkbox" onClick={() => this.props.favNews(individual)} />
+                                                    {/* <label htmlFor="news__favs" class="news__label">
+                                                <i className="far fa-star news__star"></i>
+                                            </label> */}
+
+                                                </div>
                                             </div>
                                             <img src={individual.urlToImage} alt='Picture related to the article' className="news__image"/>
                                         </div>
                                     </a> 
                                     {/* <button onClick={() => this.props.favNews(individual)}></button>    */}
                                     {/* <i className="far fa-star"></i>     */}
-                                    <input class="news__favourites" type="checkbox" onClick={() => this.props.favNews(individual)}/>
+                                    
                                 </li>
                             )
                         }  
@@ -35,12 +43,3 @@ class NewsGallery extends Component {
 }
 
 export default NewsGallery;
-
-/*
-
-when button is clicked, send data from favouriteStories into news
-
-
-
-
-*/

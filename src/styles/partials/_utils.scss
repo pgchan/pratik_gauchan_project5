@@ -3,16 +3,18 @@
 @media only screen and (max-width: 1260px) {
     .navNewsFavs {display: flex;}
     .navNewsFavs .navigation {
-        position: sticky;
+        // position: sticky;
         flex-basis: 230px;}
 }
 
-@media only screen and (max-width: 1070px) {
+@media only screen and (max-width: 1200px) {
+    .navNewsFavs .navigation {top: 24px;}
     .navigation { 
         &__hamburger__button {
             left: 16px;
             position: absolute;
-            top: -35px;}   
+            // top: -35px
+        }   
         &__list {
             box-shadow: 0 0 16px rgba(0,0,0,.28);
             width: 230px;
@@ -21,14 +23,16 @@
         }
         .navigation__toggle:checked ~ .navigation__list {
             left: -16px;
-            top: 36px;
+            top: 48px;
             padding: 20px 0px}
         .navNewsFavs .navigation {flex-basis: 0}
         .navigation__label .navigation__hamburger__icon {display: inline-block}
+
 }
 
 @media only screen and (max-width: 830px) {
     .news__individual{padding: 0 15px;}
+    .search__bar {width: 80%}
 }
 
 @media only screen and (max-width: 650px) {
@@ -51,11 +55,18 @@
 
 @media only screen and (max-width: 550px) {
     .news__text__source{display: none}
-    .headerSearch {
-        flex-direction: column;
-        padding-bottom: 10px}
+    // .headerSearch {
+    //     flex-direction: column;
+    //     padding-bottom: 10px}
     .header {
         justify-content: center;
         padding: 0;
-        padding-bottom: 10px;}
+        padding-bottom: 10px;
+        &__logo {display: none;}
+    }
+    .header .header__logo__icon {
+        visibility: visible;
+        margin-top: 5px;
+    };
+    .navigation .navigation__hamburger__button {top: 0;}
 }

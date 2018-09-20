@@ -39,10 +39,23 @@ body {
         max-height: 125px;
         border-radius: 7px;
         object-fit: cover;}
-    &__favourites {
-        position: absolute;
-        top: 10px;
-        right: 10px;
+    // &__favourites {
+    //     position: absolute;
+    //     top: 10px;
+    //     right: 30px;}
+    // &__star{
+    //     position: absolute;
+    //     top: 8px;
+    //     right: 7px;
+    // }
+    &__text__source {
+        font-style: italic;
+        color: #000;
+    }
+    &__favourites__container {
+        font-size: 0.8rem;
+        color: #000;
+        padding-top: 10px;
     }
 }
 
@@ -56,14 +69,14 @@ li {
     margin-bottom: 20px;
     list-style: none;
     position: relative;
-    padding: 30px;
+    // padding: 20px;
     & button {
         border: none;
         position: absolute;
         right: 1.5%;
         top: 5.5%;
     }
-    & button:focus {color: orange}
+    // & button:focus {color: orange}
     & a {
         text-decoration: none;
         color: grey;
@@ -75,6 +88,7 @@ li {
 .news {
     display: flex;
     justify-content: space-between;
+    padding: 20px;
     &__text{
         flex-direction: column;
         display: flex;

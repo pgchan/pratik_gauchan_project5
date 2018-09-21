@@ -9,10 +9,10 @@
 }
 
 .header {
-    flex: 1 0 auto;
+    // flex: 1 0 auto;
     display: flex;
-    align-items: center;
-    // position: absolute;
+    // align-items: center;
+    position: fixed;
     top: 25px;
     padding-left: 50px;
     z-index: 1;
